@@ -19,7 +19,6 @@
     transition: fill .1s;
     transform-origin: center center;
   }
-  
   /* Сердце */
   .like-icon .main-body {
     fill: var(--bg-color-card);
@@ -40,8 +39,6 @@
     fill: var(--heart-color);
     transition: fill .3s 3ms;
   }
-  
-  
   /* Плюс */
   .like-icon .core {
     fill: var(--bg-color-card);
@@ -72,8 +69,6 @@
     fill: var(--heart-color);
     transition: fill .3s 6ms;
   }
-  
-  
   /* Искры */
   .like-icon .sparks {
     opacity: 0;
