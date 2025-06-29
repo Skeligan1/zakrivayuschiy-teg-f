@@ -9,19 +9,11 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
-@supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
-  .card__image-label {
-    -webkit-text-stroke: 1px var(--stroke-color);
-    text-shadow: none;
-  }
-}
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: 'wght' var(--text-weight);
 
    background-image: repeating-linear-gradient(
       to bottom,
@@ -114,9 +106,16 @@
   color: var(--accent-color);
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px var(--stroke-color);
   text-shadow: 0 var(--stroke-color), 0 1px var(--stroke-color),
     0 -1px var(--stroke-color), 1px 0 var(--stroke-color);
+}
+
+@supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
+  .card__image-label {
+    -webkit-text-stroke: 1px var(--stroke-color);
+    text-stroke: 1px var(--stroke-color);
+    text-shadow: none;
+  }
 }
 
 .card__content {
@@ -131,14 +130,11 @@
   line-height: 21px;
   font-weight: var(--text-weight);
   font-variation-settings: 'wght' var(--text-weight);
+  margin-block-end: 26px;
 }
 
 .card__content-text:nth-child(1) {
   margin-block-end: 24px;
-}
-
-.card__content-text:nth-child(2) {
-  margin-block-end: 26px;
 }
 
 .card__icon-button {
@@ -168,15 +164,18 @@
   border-color: var(--accent-color);
 }
 
-.card__like-button {
+.button-action {
   border: 2px solid var(--border-color);
-  padding: 9px 17px;
   background-color: var(--bg-color-card);
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.card__like-button {
+  padding: 9px 17px;
   block-size: 38px;
   inline-size: 130px;
-  position: relative;
 }
 
 .card__like-button:hover::before {
@@ -214,7 +213,7 @@
   font-weight: 400;
   font-style: normal;
   mix-blend-mode: difference;
-  line-height: 90%;
+  line-height: 12.6px;
 }
 
 .button {
@@ -228,17 +227,12 @@
 .button-remember {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
   font-size: 14px;
   font-weight: 400;
   line-height: 12.6px;
   padding: 15px 20px;
-  border: 2px solid var(--border-color);
-  background-color: var(--bg-color-card);
   cursor: pointer;
-  position: relative;
 }
 
 .button-remember::before {
@@ -266,19 +260,7 @@
   mix-blend-mode: difference;
 }
 
-.button__text-rembemer {
-  font-size: 14px;
-  font-family: var(--accent-font), sans-serif;
-  color: var(--mix-blend-color);
-  mix-blend-mode: difference;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 12.6px;
-}
-
-.button-remember:focus-visible,
-.card__like-button:focus-visible,
-.button-save:focus-visible {
+.footer-button:focus-visible {
   box-shadow: 2px 2px 0 0px var(--border-color);
   transition: box-shadow 0.3s ease;
 }
@@ -289,7 +271,7 @@
 }
 
 .dialog::backdrop {
-  background-color: rgba(0 0 0 / 0.8);
+  background-color: rgba(0 0 0 / 0.75);
 }
 
 .dialog {
@@ -339,15 +321,10 @@
 .button-save {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
   width: 100%;
   padding: 15px 20px;
-  border: 2px solid var(--border-color);
-  background-color: var(--bg-color-card);
   cursor: pointer;
-  position: relative;
   text-transform: uppercase;
 }
 
@@ -366,15 +343,6 @@
 
 .button-save:hover::before {
   width: 100%;
-}
-
-.button-save-text {
-  font-family: var(--accent-font), sans-serif;
-  mix-blend-mode: difference;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 12.6px;
-  color: var(--mix-blend-color);
 }
 
 @media screen and (width <= 375px) {

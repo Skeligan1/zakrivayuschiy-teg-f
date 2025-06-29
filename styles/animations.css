@@ -76,10 +76,10 @@
   }
   
   .like-icon.is-liked .sparks {
-    animation: sparks .3s ease-in;
+    animation: sparks .3s .3s ease-in;
   }
   
-  .like-icon.is-liked .heart {
+  .like-icon.is-liked {
     animation: scale .3s ease-in;
   }
   
